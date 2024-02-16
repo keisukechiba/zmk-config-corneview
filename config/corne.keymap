@@ -60,12 +60,12 @@
                 adjust_layer {
 // -----------------------------------------------------------------------------------------
 // | MUTE |VOLDN|VOLUP| PREV| NEXT| PLAY|   | BT1 | BT2 | BT3 | BT4 | BT5 | BTCLR|
-// | CAPS |     |     |     |     |     |   |     |     |     |     |     |      |
+// | CAPS |     |     |     |     |     |   |     |     |     |     |     | BTCLRALL|
 // |      |     |     |     | BRID| BRIU|   |     |     |     |     |     |      |
 //                    | GUI |     | ENT |   | SPC |     | ALT |
                         bindings = <
    &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PREV  &kp C_NEXT &kp C_PP   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR 
-   &trans &trans &trans &trans &trans &trans                                 &trans &trans &trans &trans &trans &BT_CLR_ALL 
+   &trans &trans &trans &trans &trans &trans                                 &trans &trans &trans &trans &trans &bt BT_CLR_ALL 
    &kp CAPS &trans  &trans &trans   &kp C_BRI_DN  &kp C_BRI_UP               &trans &trans &trans &trans &trans &trans
                                         &trans &trans &trans                 &trans &trans &trans 
                         >;
