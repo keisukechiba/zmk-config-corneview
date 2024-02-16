@@ -8,10 +8,27 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+
+#include <zmk/events/keycode_state_changed.h>
+
+int on_key_pressed(const struct zmk_keycode_state_changed *ev) {
+    if (ev->state) { // キーが押された場合
+        char display_message[32];
+        snprintf(display_message, sizeof(display_message), "Key %d pressed", ev->keycode);
+        // OLEDにメッセージを表示する関数を呼び出す
+        oled_write(display_message, false);
+    }
+    return 0;
+}
+
+ZMK_LISTENER(my_listener, on_key_pressed);
+ZMK_SUBSCRIPTION(my_listener, zmk_keycode_state_changed);
+
 #define DEFAULT 0
 #define LOWER  1
 #define RAISE  2
 #define ADJUST 3
+
 
 / {
         keymap {
